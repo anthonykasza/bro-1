@@ -1,3 +1,4 @@
+## THIS SCRIPT NO LONGER WORKS, Metasploit was updated. But feel free to use this as a template.
 ## Detect Metasploit SSL Sessions (includes /meterpreter/reverse_https and browser exploits with SSL)
 ##
 ## (c)2014 John Althouse
