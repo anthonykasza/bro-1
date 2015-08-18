@@ -1,6 +1,6 @@
 ## Adds x509 certificate serial numbers to the Intel Framework as type Intel::CERT_SERIAL
 ## (c)2014 John Althouse
-##
+## Feel free to use this as a template for adding other data sources to the intel framework.
 
 @load base/frameworks/intel
 @load base/files/x509
