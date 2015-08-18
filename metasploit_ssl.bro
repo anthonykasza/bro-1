@@ -14,6 +14,7 @@ export {
 }
 
 const falselist += {
+	## False positive list
 	"CN=localhost",
 	"CN=office",
 	"CN=default",
