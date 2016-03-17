@@ -26,12 +26,9 @@ event ssh_server_version(c: connection, version: string)
 
 event new_packet(c: connection, p: pkt_hdr)
 {
-if ( ! c?$service ) { return; }
-if ( /SSH/ !in cat(c$service) ) { return; }
+if ( ! c?$service || "SSH" !in c$service) { return; }
 
-local is_src:bool &default=F;
-if ( p$ip$src == c$id$orig_h ) { is_src = T; }
-if ( p$ip$src != c$id$orig_h ) { is_src = F; }
+local is_src = p$ip$src == c$id$orig_h;
 
 if ( is_src == F && p$tcp$dl == 96 && mssh_conns[c$uid] == 0 )
 {
