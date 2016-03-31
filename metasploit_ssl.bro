@@ -28,8 +28,8 @@ event ssl_established(c: connection )
 	if ( ! c$ssl?$issuer ) { return; }
 	if ( c$ssl$subject != c$ssl$issuer ) { return; }
 	if ( c$ssl$subject in falselist ) { return; }
-	if ( /^CN=[a-z]{2,10}$/ == c$ssl$subject );
-	if ( /^.+SHA256$/ == c$ssl$cipher );
+	if ( /^CN=[a-z]{2,10}$/ == c$ssl$subject )
+	if ( /^.+SHA256$/ == c$ssl$cipher )
                 NOTICE([$note=Metasploit_SSL_Cert, $conn=c,
                         $msg=fmt("Metasploit Style Randomly Generated SSL Cert, '%s'", c$ssl$subject),
                         $sub=c$ssl$issuer]);
