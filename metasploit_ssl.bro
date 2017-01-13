@@ -21,16 +21,17 @@ const falselist += {
 	"CN=mail"
 	};
 
-event ssl_established(c: connection )
+event x509_certificate(f: fa_file , cert_ref: opaque of x509 , cert: X509::Certificate )
 	{
-	if ( c$id$resp_h in 10.0.0.0/8 ) { return; }
-	if ( ! c$ssl?$subject ) { return; }
-	if ( ! c$ssl?$issuer ) { return; }
-	if ( c$ssl$subject != c$ssl$issuer ) { return; }
-	if ( c$ssl$subject in falselist ) { return; }
-	if ( /^CN=[a-z]{2,10}$/ == c$ssl$subject )
-	if ( /^.+SHA256$/ == c$ssl$cipher )
-                NOTICE([$note=Metasploit_SSL_Cert, $conn=c,
-                        $msg=fmt("Metasploit Style Randomly Generated SSL Cert, '%s'", c$ssl$subject),
-                        $sub=c$ssl$issuer]);
+	for ( cid in f$conns )
+	    { if ( cid$resp_h in 10.0.0.0/8 ) { return; } }
+	if ( ! cert?$subject ) { return; }
+	if ( ! cert?$issuer ) { return; }
+	if ( cert$subject != cert$issuer ) { return; }
+	if ( cert$subject in falselist ) { return; }
+	if ( /^CN=[a-z]{2,10}$/ == cert$subject )
+	if ( "sha256WithRSAEncryption" == cert$sig_alg )
+                NOTICE([$note=Metasploit_SSL_Cert, $conn=f$conns[cid],
+                        $msg=fmt("Metasploit Style Randomly Generated SSL Cert, '%s'", cert$subject),
+                        $sub=cert$issuer]);
         }
