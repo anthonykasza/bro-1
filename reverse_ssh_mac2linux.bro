@@ -4,7 +4,7 @@
 # DBDB.
 #
 # Detects when multiple characters have been typed into a reverse SSH shell and returned.
-# Mac to Linux version 1.0
+# Mac to Linux version 1.1
 
 global mssh_conns:table[string] of count &redef;
 global mac_echo:table[string] of count &redef;
