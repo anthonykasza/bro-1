@@ -4,7 +4,7 @@
 # DBDB.
 #
 # Detects when multiple characters have been typed into a reverse SSH shell and returned.
-# Linux to Linux version 1.0
+# Linux to Linux version 1.1
 
 redef enum Notice::Type += {
   SSH_Reverse_Shell,
