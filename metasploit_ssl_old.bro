@@ -2,7 +2,6 @@
 ## Detect Metasploit SSL Sessions (includes /meterpreter/reverse_https and browser exploits with SSL)
 ##
 ## (c)2014 John Althouse
-## @darkphyber
 ## <3 to Vlad and Liam
 ## 
 ## We're basically looking for [a-z]+[A-Z]{2,} in the L= of the x509 cert where C=US. Simple. :)
