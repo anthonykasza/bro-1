@@ -1,10 +1,23 @@
 # Reverse SSH Interactive Shell Detection
 # © 2015 John B. Althouse III and Jeff Atkinson
 # Idea from W.
-# DBDB.
 #
 # Detects when multiple characters have been typed into a reverse SSH shell and returned.
 # Linux to Linux version 1.1
+# This version has been depricated. See Version 2 which is much more performant.
+#
+##    This program is free software: you can redistribute it and/or modify
+##    it under the terms of the GNU General Public License as published by
+##    the Free Software Foundation, either version 3 of the License, or
+##    any later version.
+##
+##    This program is distributed in the hope that it will be useful,
+##    but WITHOUT ANY WARRANTY; without even the implied warranty of
+##    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##    GNU General Public License for more details.
+##
+##    You should have received a copy of the GNU General Public License
+##    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 redef enum Notice::Type += {
   SSH_Reverse_Shell,
