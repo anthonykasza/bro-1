@@ -1,3 +1,5 @@
+## UPDATE OCT. 2017 - THIS NO LONGER WORKS ON LATEST VERSION OF METASPLOIT
+##
 ## Detect Default Metasploit SSL Random Cert (includes /meterpreter/reverse_https and browser exploits with SSL)
 ## Version 2 (8/2/2015)
 ## Copywrite 2015 John B. Althouse III
